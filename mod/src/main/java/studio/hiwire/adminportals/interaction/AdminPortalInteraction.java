@@ -135,7 +135,7 @@ public class AdminPortalInteraction extends SimpleBlockInteraction {
     // Migrate legacy fields and normalize to ensure all fields have valid values
     final var config = portalConfig.migrated().normalized();
 
-    if (interactionType != InteractionType.Use && !config.getCollisionInteraction()) {
+    if (interactionType == InteractionType.Collision && !config.getCollisionInteraction()) {
       return;
     }
 
